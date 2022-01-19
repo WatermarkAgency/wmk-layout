@@ -6,7 +6,7 @@ import { Header } from "./Header";
 import * as CSS from "csstype";
 
 type stickyProps = {
-  Alert: React.ComponentClass | React.FunctionComponent | React.ReactFragment;
+  Alert?: React.ComponentClass | React.FunctionComponent | React.ReactFragment;
   className?: string;
   children: React.ReactNode;
   absolute?: boolean;

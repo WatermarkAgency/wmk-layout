@@ -4,9 +4,9 @@ import { wmkClass } from "./logic";
 
 type mainLayoutProps = {
   children: React.ReactNode;
-  Header: React.ComponentClass | React.FunctionComponent;
-  Footer: React.ComponentClass | React.FunctionComponent;
-  className: string;
+  Header?: React.ComponentClass | React.FunctionComponent;
+  Footer?: React.ComponentClass | React.FunctionComponent;
+  className?: string;
 };
 
 export const MainLayout = ({
