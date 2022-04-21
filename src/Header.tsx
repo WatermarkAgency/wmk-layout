@@ -1,11 +1,10 @@
 import * as React from "react";
-import * as CSS from "csstype";
 import { wmkClass } from "./logic";
 
 type headerProps = {
-  children: React.ReactChild
+  children: React.ReactChild;
   className?: string;
-  style?: CSS.Properties;
+  style?: React.CSSProperties;
 };
 
 export const Header = React.forwardRef(

@@ -3,14 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { wmkClass } from "./logic";
 import { Header } from "./Header";
-import * as CSS from "csstype";
 
 interface StickyProps {
   Alert?: React.ReactElement<{}>;
   className?: string;
   children: React.ReactChild;
   absolute?: boolean;
-  style?: CSS.Properties;
+  style?: React.CSSProperties;
   zIndex?: number;
   width?: string;
   trigger?: number;

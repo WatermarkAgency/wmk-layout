@@ -1,12 +1,11 @@
 import * as React from "react";
 import { wmkClass } from "./logic";
-import * as CSS from "csstype";
 
 type copyrightProps = {
   children?: React.ReactChild;
   className?: string;
   id?: string;
-  style?: CSS.Properties;
+  style?: React.CSSProperties;
 };
 
 export const Copyright = React.forwardRef(
