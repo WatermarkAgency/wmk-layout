@@ -5,16 +5,16 @@ import { wmkClass } from "./logic";
 import { Header } from "./Header";
 import * as CSS from "csstype";
 
-type stickyProps = {
-  Alert?: React.ComponentClass | React.FunctionComponent | React.ReactFragment;
+interface StickyProps {
+  Alert?: React.ReactElement<{}>;
   className?: string;
-  children: React.ReactNode;
+  children: React.ReactChild;
   absolute?: boolean;
   style?: CSS.Properties;
   zIndex?: number;
   width?: string;
   trigger?: number;
-};
+}
 
 export const Sticky = ({
   Alert = <React.Fragment />,
@@ -25,7 +25,7 @@ export const Sticky = ({
   zIndex = 1000,
   width = "100%",
   trigger = 0
-}: stickyProps) => {
+}: StickyProps) => {
   const domPosition = absolute ? "absolute" : "relative";
   const [headerRect, setHeaderRect] = useState<DOMRect>({
     y: 0,

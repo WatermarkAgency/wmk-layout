@@ -3,28 +3,26 @@ import { FlexSpacer } from "./FlexSpacer";
 import { wmkClass } from "./logic";
 
 type mainLayoutProps = {
-  children: React.ReactNode;
-  Header?: React.ComponentClass | React.FunctionComponent;
-  Footer?: React.ComponentClass | React.FunctionComponent;
+  children: React.ReactChild | React.ReactChild[];
+  Header?: React.ReactElement<{}>;
+  Footer?: React.ReactElement<{}>;
   className?: string;
 };
 
 export const MainLayout = ({
   children,
-  Header = () => <div>Pass Header JSX</div>,
-  Footer = () => <div>Pass Footer JSX</div>,
+  Header = <div>Pass Header JSX</div>,
+  Footer = <div>Pass Footer JSX</div>,
   className
 }: mainLayoutProps) => {
-  const HeaderJSX = Header;
-  const FooterJSX = Footer;
   return (
     <div
       className={wmkClass("wrap", "layout")}
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
-      <HeaderJSX />
+      {Header}
       <main className={wmkClass("main", "layout", className)}>{children}</main>
       <FlexSpacer />
-      <FooterJSX />
+      {Footer}
     </div>
   );
 };

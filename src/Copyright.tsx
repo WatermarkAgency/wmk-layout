@@ -3,7 +3,7 @@ import { wmkClass } from "./logic";
 import * as CSS from "csstype";
 
 type copyrightProps = {
-  children: React.ReactNode;
+  children?: React.ReactChild;
   className?: string;
   id?: string;
   style?: CSS.Properties;
@@ -20,7 +20,7 @@ export const Copyright = React.forwardRef(
         id={id}
         className={wmkClass("copyright", "layout", className)}
         ref={ref}>
-        © {year} {children}
+        © {year} {children ? children : null}
       </div>
     );
   }
