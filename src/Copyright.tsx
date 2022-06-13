@@ -2,7 +2,7 @@ import * as React from "react";
 import { wmkClass } from "./logic";
 
 type copyrightProps = {
-  children?: React.ReactChild;
+  children?: React.ReactNode;
   className?: string;
   id?: string;
   style?: React.CSSProperties;

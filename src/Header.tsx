@@ -2,7 +2,7 @@ import * as React from "react";
 import { wmkClass } from "./logic";
 
 type headerProps = {
-  children: React.ReactChild;
+  children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 };

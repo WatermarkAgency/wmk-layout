@@ -3,7 +3,7 @@ import { FlexSpacer } from "./FlexSpacer";
 import { wmkClass } from "./logic";
 
 type mainLayoutProps = {
-  children: React.ReactChild | React.ReactChild[];
+  children: React.ReactNode;
   Header?: React.ReactElement<{}>;
   Footer?: React.ReactElement<{}>;
   className?: string;

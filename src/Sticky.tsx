@@ -7,7 +7,7 @@ import { Header } from "./Header";
 interface StickyProps {
   Alert?: React.ReactElement<{}>;
   className?: string;
-  children: React.ReactChild;
+  children: React.ReactNode;
   absolute?: boolean;
   style?: React.CSSProperties;
   zIndex?: number;
