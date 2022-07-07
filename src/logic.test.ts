@@ -54,8 +54,7 @@ describe("Pagination class", () => {
   });
 
   it("Pagination instantiates with higher per page than source array", () => {
-    const morePerPage = new Pagination([], 60);
-
+    const morePerPage = new Pagination(mockData, 60);
     expect(morePerPage.length).toBe(1);
     expect(morePerPage.total).toBe(50);
     expect(morePerPage.pages[0].length).toBe(50);
@@ -66,17 +65,35 @@ describe("Pagination class", () => {
     const empty = new Pagination([], 10);
 
     expect(empty.length).toBe(1);
-    expect(empty.total).toBe(50);
-    expect(empty.pages[0].length).toBe(50);
-    expect(empty.perPage).toBe(50);
+    expect(empty.total).toBe(0);
+    expect(empty.pages[0].length).toBe(0);
+    expect(empty.perPage).toBe(10);
   });
 
   it("Pagination instantiates with perPage equal to array length", () => {
-    const empty = new Pagination(mockData, 50);
+    const same = new Pagination(mockData, 50);
 
-    expect(empty.length).toBe(1);
-    expect(empty.total).toBe(50);
-    expect(empty.pages[0].length).toBe(50);
-    expect(empty.perPage).toBe(50);
+    expect(same.length).toBe(1);
+    expect(same.total).toBe(50);
+    expect(same.pages[0].length).toBe(50);
+    expect(same.perPage).toBe(50);
   });
+
+  // it("Pagination instantiates with non array", () => {
+  //   const badArray = new Pagination("notAnArray", 50);
+
+  //   expect(badArray.length).toBe(0);
+  //   expect(badArray.total).toBe(0);
+  //   expect(badArray.pages[0].length).toBe(0);
+  //   expect(badArray.perPage).toBe(0);
+  // });
+
+  // it("Pagination instantiates with non number", () => {
+  //   const badArray = new Pagination(mockData, "notANumber");
+
+  //   expect(badArray.length).toBe(0);
+  //   expect(badArray.total).toBe(0);
+  //   expect(badArray.pages[0].length).toBe(0);
+  //   expect(badArray.perPage).toBe(0);
+  // });
 });

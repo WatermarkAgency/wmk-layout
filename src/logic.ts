@@ -40,6 +40,10 @@ export class Pagination {
   constructor(arr: any[], per = 20) {
     const pages =
       per > 0.5 ? (per < arr.length ? paginateArray(arr, per) : [arr]) : [arr];
+    if (per === 60) {
+      console.log(pages.length, arr.length, [arr].length, per < arr.length);
+    }
+
     this.pages = pages;
     this.perPage = per > 0.5 ? Math.round(per) : arr.length;
     this.length = pages.length;
